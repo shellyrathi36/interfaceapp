@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        /* Popup styles */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .popup-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        #close-popup {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Appointment Booking</h1>
+
+    <form id="appointment-form">
+        <label for="patient-name">Your Name:</label>
+        <input type="text" id="patient-name" required>
+        <label for="appointment-date">Appointment Date:</label>
+        <input type="date" id="appointment-date" required>
+        <label for="appointment-time">Appointment Time:</label>
+        <input type="time" id="appointment-time" required>
+        <input type="submit" value="Book Appointment">
+    </form>
+
+    <!-- Popup -->
+    <div id="appointment-popup" class="popup">
+        <div class="popup-content">
+            <span id="close-popup" onclick="closePopup()">X</span>
+            <p>Your appointment has been booked.</p>
+        </div>
+    </div>
+
+    <script>
+        // Function to open the popup
+        function openPopup() {
+            document.getElementById("appointment-popup").style.display = "block";
+        }
+
+        // Function to close the popup
+        function closePopup() {
+            document.getElementById("appointment-popup").style.display = "none";
+        }
+
+        // Event listener for the form submission
+        document.getElementById("appointment-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            openPopup();
+        });
+    </script>
+</body>
+</html>
+
