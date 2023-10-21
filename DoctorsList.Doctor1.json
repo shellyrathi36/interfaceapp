@@ -1,0 +1,56 @@
+[{
+  "_id": {
+    "$oid": "6533915e523825fab5b4369e"
+  },
+  "name": "sandeep rana",
+  "specialty": "allergist"
+},
+{
+  "_id": {
+    "$oid": "653391ab523825fab5b436a0"
+  },
+  "name": "jagun saini",
+  "specaiality": "dermatologits"
+},
+{
+  "_id": {
+    "$oid": "653391d6523825fab5b436a2"
+  },
+  "name": "sonam mittal",
+  "speciality": "opthalmologits"
+},
+{
+  "_id": {
+    "$oid": "65339209523825fab5b436a4"
+  },
+  "name": "deepak batra",
+  "speciality": "cardiologists"
+},
+{
+  "_id": {
+    "$oid": "65339236523825fab5b436a6"
+  },
+  "name": "simran dhupia",
+  "specaility": "endocrinologists"
+},
+{
+  "_id": {
+    "$oid": "6533926d523825fab5b436a8"
+  },
+  "name": "jasmine bajwa",
+  "speciality": "gastroenterologists"
+},
+{
+  "_id": {
+    "$oid": "65339296523825fab5b436aa"
+  },
+  "name": "sanjay arora",
+  "speciality": "paediatrician"
+},
+{
+  "_id": {
+    "$oid": "653392eb523825fab5b436ac"
+  },
+  "name": "simrat bajwa",
+  "speciality": "gynecologists"
+}]

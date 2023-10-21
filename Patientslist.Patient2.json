@@ -1,0 +1,27 @@
+[{
+  "_id": {
+    "$oid": "653372922c16cf8782be8930"
+  },
+  "name": "shelly",
+  "age": 18,
+  "problem": [
+    "fever",
+    "cough",
+    "cold"
+  ],
+  "appointmentdate": "12 nov 2023",
+  "appointmenttime": "9;00 am"
+},
+{
+  "_id": {
+    "$oid": "653372922c16cf8782be8931"
+  },
+  "name": "aryan",
+  "age": 21,
+  "problem": [
+    "diarrahoea",
+    "kidney stones"
+  ],
+  "appointmentdate": "12 nov 2023",
+  "appointmenttime": "9:30 am"
+}]
