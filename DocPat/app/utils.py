@@ -39,6 +39,14 @@ def get_doc_pass(target_doc_id):
             doc_id = row.get('Doc_ID')
             if doc_id == target_doc_id:
                 return row.get('Password')
+            
+def get_doc_name(target_doc_id):
+    with open('data/doctor.csv', 'r', newline='') as csv_file:
+        csv_reader = csv.DictReader(csv_file)
+        for row in csv_reader:
+            doc_id = row.get('Doc_ID')
+            if doc_id == target_doc_id:
+                return row.get('Name')
 
 def get_patient_pass(target_patient_id):
     with open('data/patient.csv', 'r', newline='') as csv_file:
