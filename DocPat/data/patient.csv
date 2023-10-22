@@ -1,0 +1,6 @@
+Patient_ID,Name,ID,ID_Number,Password
+P001,John Doe,AADHAR,123456789012,password1
+P002,Jane Smith,DL,AB123456,password2
+P003,Michael Johnson,AADHAR,987654321098,password3
+P004,Susan Williams,DL,CD789012,password4
+P005,Robert Davis,AADHAR,456789012345,password5

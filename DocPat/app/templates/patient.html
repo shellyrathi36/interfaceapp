@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <main id="patient">
+        <section>
+            <h2>Create a new account</h2>
+
+            <form action="{% url 'patient_new' %}" method="POST">
+
+                {% csrf_token %}
+        
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name"><br>
+                
+                <p>Select valid I'd Proof:</p>
+                <div class="radio-buttons">
+                    <label class="radio-label">
+                        <input type="radio" name="gov-id" value="aadhar">Using Aadhar
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="gov-id" value="drivingLicence">Using Driving Licence
+                    </label>
+                </div>
+        
+                <label for="gov-id-number">I'd Proof Number:</label><br>
+                <input type="text" id="gov-id-number" name="gov-id-number"><br>
+
+                <label for="password">Create a Password:</label><br>
+                <input type="password" id="password" name="password"><br>
+        
+                <label for="password">Confirm the Password:</label><br>
+                <input type="password" id="password" name="password"><br>
+                
+                <input type="submit" value="Create Account">
+            </form>
+
+        </section>
+
+        <section>
+            <h2>Login</h2>
+
+            <form action="{% url 'patient' %}" method="POST">
+
+                {% csrf_token %}
+
+                <input type="hidden" id="Operation" name="Operation" value="login">
+        
+                <label for="patient_id">Patient ID:</label><br>
+                <input type="text" id="patient_id" name="patient_id"><br>
+        
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password"><br>
+
+                {{ error|safe }}
+        
+                <input type="submit" value="Login">
+            </form>
+        </section>
+    </main>
+{% endblock %}

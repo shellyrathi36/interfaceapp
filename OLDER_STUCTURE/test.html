@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create ABHA Number</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: right;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .radio-buttons {
+            margin: 20px 0;
+        }
+        .radio-label {
+            margin-right: 20px;
+        }
+        .nextButton{
+            display: flex;
+            justify-content: right;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="">
+<img src="NahLogo.jpg" alt="" style="height: 10%;">
+</div>
+
+    <header>
+        <button id="registerAddressButton">Register for Address</button>
+        <button id="facilityLoginButton">Facility Login</button>
+    </header>
+    <div class="container">
+        <h1>Create Patient I'd</h1>
+        <p>Select valid I'd Proof:</p>
+        <div class="radio-buttons">
+            <label class="radio-label">
+                <input type="radio" name="abhaMethod" value="aadhar">Using Aadhar
+            </label>
+            <label class="radio-label">
+                <input type="radio" name="abhaMethod" value="drivingLicence">Using Driving Licence
+            </label>
+        </div>
+        <div>
+            <button id="nextButton">Next</button>
+        </div>
+    </div>
+</body>
+</html>

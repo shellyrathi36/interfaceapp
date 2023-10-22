@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Medical Prescription</title>
+    <link rel="stylesheet" href="medicalpres.css/medicalprec.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 50%;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin: 10px 0;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 5px;
+        }
+        textarea {
+            width: 100%;
+            padding: 5px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .required::after{
+            content: ' *';
+        color: red;
+        }
+   
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Medical Prescription</h1>
+        <form id="prescription-form">
+            <div class="form-group">
+                <label for="patient-name" class="required">Patient Name:</label>
+                <input type="text" id="patient-name" name="patient-name" required>
+            </div>
+            <div class="form-group">
+                <label for="doctor-name" class="required">Doctor Name:</label>
+                <select style="height: 35px;width: 770px;">
+                    <option value="">Select Doctor</option>
+                    <% doctors.forEach((doctor)=>{
+                        <option id="doctor-1" value=""> < %=doctor.name %></option>
+                    }) %>
+                    <option id="doctor-1" value=""> <%=doctor</option>
+                    <option value="">jagun saini</option>
+                    <option value="">sonam mittal</option>
+                    <option value="">deepak batra</option> 
+                </select>
+                
+            </div>
+            <div class="form-group">
+                <label for="diagnosis" class="required">Diagnosis</label>
+                <textarea id="diagnosis" name="diagnosis" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="medication" class="required">Medication:</label>
+                <textarea id="medication" name="medication" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="instructions" class="required">Instructions:</label>
+                <textarea id="instructions" name="instructions" required></textarea>
+            </div>
+            <button type="submit">Create Prescription</button>
+        </form>
+    </div>
+
+    <script>
+        const prescriptionForm = document.getElementById("prescription-form");
+        prescriptionForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // You can add JavaScript code here to handle the form submission,
+            // for example, sending the data to a server or storing it in a database.
+
+            alert("Prescription created successfully!");
+            prescriptionForm.reset();
+        });
+    </script>
+</body>
+</html>

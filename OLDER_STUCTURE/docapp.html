@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Appointment Booking</title>
+    <link rel="stylesheet" href="docapp.css">
+    <link rel="javascript" href="docapp.js" >
+</head>
+<body>
+    <header>
+        <h1>Doctor Appointment Booking</h1>
+    </header>
+    <main>
+        <section class="booking-form">
+            <h2>Book an Appointment</h2>
+            <form id="appointment-form">
+                <label for="patient-name">Your Name:</label>
+                <input type="text" id="patient-name" required>
+                <label for="appointment-date">Appointment Date:</label>
+                <input type="date" id="appointment-date" required>
+                <label for="appointment-time">Appointment Time:</label>
+                <input type="time" id="appointment-time" required>
+
+                <button type="submit" value="Book Appointment">Book Appointment</button>
+            </form>
+        </section>
+        <section class="appointment-list">
+            <h2>Upcoming Appointments</h2>
+            <ul id="appointments-list"></ul>
+        </section>
+    </main>
+    </div>
+    <div id="appointment-popup" class="popup">
+        <div class="popup-content">
+            <span id="close-popup" onclick="closePopup()">X</span>
+            <p>Your appointment has been booked.</p>
+        </div>
+    </div>
+
+    <script>
+        // Function to open the popup
+        function openPopup() {
+            document.getElementById("appointment-popup").style.display = "block";
+        }
+
+        // Function to close the popup
+        function closePopup() {
+            document.getElementById("appointment-popup").style.display = "none";
+        }
+
+        // Event listener for the "Book Appointment" button
+        document.getElementById("open-popup").addEventListener("click", openPopup);
+    </script>
+</body>
+</html>

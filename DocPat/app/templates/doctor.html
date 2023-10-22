@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <main id="doctor">
+        <section>
+            <h2>Login</h2>
+
+            <form action="{% url 'doctor' %}" method="POST">
+
+                {% csrf_token %}
+        
+                <label for="doc_id">Doctor's ID:</label><br>
+                <input type="text" id="doc_id" name="doc_id"><br>
+        
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password"><br>
+
+                {{ error|safe }}
+        
+                <input type="submit" value="Login">
+            </form>
+        </section>
+    </main>
+
+{% endblock %}

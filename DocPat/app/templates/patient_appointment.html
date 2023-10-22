@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <main id="patient_appointment">
+        <h1>Your Appointments</h1>
+        <form action="{% url 'patient' %}" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="Operation" id="Operation" value="book_new">
+            <input type="submit" value="Book an Appointment">
+        </form>
+            <input type="hidden" name="Operation" id="Operation" value="cancel">
+        <table>
+            <tr>
+                <th>Time</th><th>Condition</th><th>Doctor</th><th></th> 
+            </tr>
+
+            {% for entry in entries %}
+                <tr>
+                    {{ entry | safe }}
+                    <td>
+                        <form action="{% url 'patient' %}"  method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="Operation" id="Operation" value="cancel">
+                            <input type="hidden" name="A_no" id="A_no" value="{{ forloop.counter }}">
+                            <input type="submit" value="Cancel">
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+
+        </table>
+
+{% endblock %}
+
+
+

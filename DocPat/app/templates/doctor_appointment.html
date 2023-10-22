@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <main id="doctor_appointment">
+
+        <h1>Here's Your Appointments, {{ doc_name }}</h1>
+
+        <table>
+            <tr>
+                <th>Time</th>        <th>Patient ID</th>        <th>Patient Name</th>   <th></th> 
+            </tr>
+            <tr>
+                <td>January</td>     <td>$100</td>        <td>$100</td>
+                
+                <td class="button">
+                    <form action="{% url 'doctor' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" id="patient-id" value="">
+                        <input type="hidden" id="time" value="">
+                        <button>Cancel</button>
+                    </form>
+                </td>
+            </tr>
+
+        </table>
+
+    </main>
+
+{% endblock %}

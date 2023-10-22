@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <main id="index">
+    Hey, I am a 
+        <a href="{% url 'patient' %}">Patient</a> /
+        <a href="{% url 'doctor' %}">Doctor</a>
+    </main>
+
+{% endblock %}
