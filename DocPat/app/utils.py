@@ -56,10 +56,10 @@ def get_patient_pass(target_patient_id):
             if patient_id == target_patient_id:
                 return row.get('Password')
                  
-def get_patient_appointment(target_doc_id):
+def get_patient_appointment(target_patient_id):
     appointments = []
     
-    with open(f"data/patients/{target_doc_id}.csv", 'r', newline='') as csv_file:
+    with open(f"data/patients/{target_patient_id}.csv", 'r', newline='') as csv_file:
         csv_reader = csv.DictReader(csv_file)
    
         for row in csv_reader:
@@ -68,6 +68,26 @@ def get_patient_appointment(target_doc_id):
                 'time': row['Time'],
                 'condition': row['Condition'],
                 'doctor': row['Doctor'],
+            }
+
+            appointments.append(appointment)
+
+    return appointments
+
+def get_doctor_appointment(target_doc_id):
+    appointments = []
+    
+    with open(f"data/doctors/{target_doc_id}.csv", 'r', newline='') as csv_file:
+        csv_reader = csv.DictReader(csv_file)
+   
+        for row in csv_reader:
+
+            appointment = {
+                'time': row['TIME'],
+                # 'patient_id': row['Patient_ID'],
+                'patient_id': row.get(' Patient_ID', None),
+                'patient_name': row.get(' Patient_Name', None),
+                'symptoms': row.get(' Symptoms', None)
             }
 
             appointments.append(appointment)

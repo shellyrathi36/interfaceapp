@@ -6,25 +6,29 @@
 
         <h1>Here's Your Appointments, {{ doc_name }}</h1>
 
+            <input type="hidden" name="Operation" id="Operation" value="cancel">
         <table>
             <tr>
-                <th>Time</th>        <th>Patient ID</th>        <th>Patient Name</th>   <th></th> 
+                <th>Time</th><th>Patient ID</th><th>Patient Name</th><th>Symptoms</th><th></th> 
             </tr>
-            <tr>
-                <td>January</td>     <td>$100</td>        <td>$100</td>
-                
-                <td class="button">
-                    <form action="{% url 'doctor' %}" method="post">
-                        {% csrf_token %}
-                        <input type="hidden" id="patient-id" value="">
-                        <input type="hidden" id="time" value="">
-                        <button>Cancel</button>
-                    </form>
-                </td>
-            </tr>
+
+            {% for entry in entries %}
+                <tr>
+                    {{ entry | safe }}
+                    <td>
+                        <form action="{% url 'doctor' %}"  method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="Operation" id="Operation" value="cancel">
+                            <input type="hidden" name="A_no" id="A_no" value="{{ forloop.counter }}">
+                            <input type="submit" value="Cancel">
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
 
         </table>
 
-    </main>
-
 {% endblock %}
+
+
+

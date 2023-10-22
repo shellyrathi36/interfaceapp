@@ -1,6 +1,15 @@
 Doc_ID,Name,Specialty,Password
-D001,Dr. Smith,General Physician,DoctorPass1
-D002,Dr. Johnson,ENT Specialist,DoctorPass2
-D003,Dr. Davis,Orthopedic Surgeon,DoctorPass3
-D004,Dr. Wilson,Allergist,DoctorPass4
-D005,Dr. White,Gastroenterologist,DoctorPass5
+D001,Dr. Smith,Neurology,DoctorPass1
+D002,Dr. Johnson,Gastroenterology,pass456
+D003,Dr. Davis,Orthopedics,secure789
+D004,Dr. Wilson,Infectious Disease,secret321
+D005,Dr. Miller,Internal Medicine,confidential654
+D006,Dr. Harris,Gastroenterology,private987
+D007,Dr. Martin,Allergy and Immunology,hidden123
+D008,Dr. Taylor,Neurology,doctor456
+D009,Dr. Allen,Infectious Disease,password789
+D010,Dr. White,Orthopedics,secure123
+D011,Dr. Turner,Neurology,doctor789
+D012,Dr. Brown,Gastroenterology,pass123
+D013,Dr. Evans,Infectious Disease,secure456
+D014,Dr. Garcia,Internal Medicine,confidential987

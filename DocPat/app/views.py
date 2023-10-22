@@ -14,8 +14,17 @@ def doctor(request):
         password = request.POST['password']
         if doc_id in utils.list_doc_id():
             if password == utils.get_doc_pass(doc_id):
+
+                appointments = utils.get_doctor_appointment(doc_id)
+                COUNT = len(appointments)
+
+                entries = []
+                for appointment in appointments:  
+                    entries.append(f"<td>{ appointment['time'] }</td><td>{ appointment['patient_id'] }</td><td>{ appointment['patient_name'] }</td><td>{ appointment['symptoms'] }</td>" )
+
                 return render(request, "doctor_appointment.html", {
-                    "doc_name" : utils.get_doc_name(doc_id)
+                    "doc_name" : utils.get_doc_name(doc_id),
+                    "entries" : entries
                 })
             else:
                 return render(request, "doctor.html", {
